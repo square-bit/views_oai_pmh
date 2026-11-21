@@ -118,7 +118,7 @@ class Repository implements RepositoryInterface {
   /**
    *
    */
-  public function listRecords($metadataFormat = NULL, \DateTime $from = NULL, \DateTime $until = NULL, $set = NULL) {
+  public function listRecords($metadataFormat = NULL, ?\DateTime $from = NULL, ?\DateTime $until = NULL, $set = NULL) {
     $token = NULL;
     if ($this->offset) {
         $token = $this->encodeResumptionToken($this->offset, $from, $until, $metadataFormat, $set);
@@ -137,7 +137,7 @@ class Repository implements RepositoryInterface {
      * @param string $set
      * @return string
      */
-    private function encodeResumptionToken($offset = 0, \DateTime $from = null,  \DateTime $util = null, $metadataPrefix = null, $set = null) {
+    private function encodeResumptionToken($offset = 0, ?\DateTime $from = null,  ?\DateTime $util = null, $metadataPrefix = null, $set = null) {
         $params = [];
         $params['offset'] = $offset;
         $params['metadataPrefix'] = $metadataPrefix;

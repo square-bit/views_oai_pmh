@@ -191,7 +191,7 @@ class OAIPMH extends PathPluginBase {
   /**
    *
    */
-  public function initDisplay(ViewExecutable $view, array &$display, array &$options = NULL) {
+  public function initDisplay(ViewExecutable $view, array &$display, ?array &$options = NULL) {
     parent::initDisplay($view, $display, $options);
 
     if (!$prefix = $this->getMetadataPrefixByToken()) {
